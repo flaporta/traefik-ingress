@@ -1,17 +1,15 @@
-# Minimal configuration to impersonate NGINX Ingress
 ingressClass:
   enabled: true
-  isDefaultClass: true
-  name: "nginx" # Overrides default 'traefik' to hijack NGINX ingress requests
+  isDefaultClass: false
+  name: "traefik"
 
 providers:
   kubernetesIngress:
     enabled: false
-    # Allows Traefik to look at all namespaces for standard Ingress objects
     publishedService:
       enabled: true
+    ingressClassByName: true      
 
-# Configures the service for local development
 service:
   enabled: true
-  type: LoadBalancer # Works out-of-the-box with Minikube, Kind, or Docker Desktop
+  type: LoadBalancer
