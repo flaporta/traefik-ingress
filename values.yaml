@@ -6,7 +6,7 @@ ingressClass:
 
 providers:
   kubernetesIngress:
-    enabled: true
+    enabled: false
     # Allows Traefik to look at all namespaces for standard Ingress objects
     publishedService:
       enabled: true
