@@ -8,7 +8,10 @@ providers:
     enabled: false
     publishedService:
       enabled: true
-    ingressClassByName: true      
+  kubernetesIngressNginx:
+    enabled: true
+    ingressClass: "nginx"  
+    ingressClassByName: true       
 
 service:
   enabled: true
